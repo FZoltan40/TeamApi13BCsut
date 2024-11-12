@@ -61,5 +61,23 @@ namespace TeamApi.Controllers
             }
 
         }
+
+        [HttpDelete]
+        public ActionResult Delete(Guid id)
+        {
+            using (var context = new TeamContext())
+            {
+                var player = context.Players.FirstOrDefault(player => player.Id == id);
+
+                if (player != null)
+                {
+                    context.Players.Remove(player);
+                    context.SaveChanges();
+                    return StatusCode(200, new { message = "Sikeres törlés." });
+                }
+
+                return StatusCode(404, new { message = "Nincs ilyen találat." });
+            }
+        }
     }
 }
