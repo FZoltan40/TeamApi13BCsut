@@ -40,6 +40,22 @@ namespace TeamApi.Controllers
             }
         }
 
+        [HttpGet("byId")]
+        public ActionResult<Player> GetById(Guid id)
+        {
+            using (var context = new TeamContext())
+            {
+                var player = context.Players.FirstOrDefault(player => player.Id == id);
+
+                if (player != null)
+                {
+                    return StatusCode(200, player);
+                }
+
+                return NotFound();
+            }
+        }
+
         [HttpPut]
         public ActionResult<Player> Put(UpdatePlayerDto updatePlayerDto, Guid id)
         {

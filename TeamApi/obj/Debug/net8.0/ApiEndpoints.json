@@ -91,5 +91,31 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TeamApi.Controllers.PlayerController",
+    "Method": "GetById",
+    "RelativePath": "players/byId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "TeamApi.Models.Player",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
