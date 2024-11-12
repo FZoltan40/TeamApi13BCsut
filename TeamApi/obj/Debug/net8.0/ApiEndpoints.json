@@ -1,15 +1,21 @@
 [
   {
-    "ContainingType": "TeamApi.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
+    "ContainingType": "TeamApi.Controllers.PlayerController",
+    "Method": "Post",
+    "RelativePath": "players",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "createPlayerDto",
+        "Type": "TeamApi.Models.CreatePlayerDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[TeamApi.WeatherForecast, TeamApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "TeamApi.Models.Player",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -17,7 +23,26 @@
         ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "GetWeatherForecast"
+    ]
+  },
+  {
+    "ContainingType": "TeamApi.Controllers.PlayerController",
+    "Method": "Get",
+    "RelativePath": "players",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "TeamApi.Models.Player",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
