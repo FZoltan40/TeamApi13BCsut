@@ -39,5 +39,27 @@ namespace TeamApi.Controllers
                 return StatusCode(200, context.Players.ToList());
             }
         }
+
+        [HttpPut]
+        public ActionResult<Player> Put(UpdatePlayerDto updatePlayerDto, Guid id)
+        {
+            using (var context = new TeamContext())
+            {
+                var existingPlayer = context.Players.FirstOrDefault(player => player.Id == id);
+
+                if (existingPlayer != null)
+                {
+                    existingPlayer.Name = updatePlayerDto.Name;
+                    existingPlayer.Weight = updatePlayerDto.Weight;
+
+                    context.Players.Update(existingPlayer);
+                    context.SaveChanges();
+                    return StatusCode(200, existingPlayer);
+                }
+
+                return StatusCode(404);
+            }
+
+        }
     }
 }

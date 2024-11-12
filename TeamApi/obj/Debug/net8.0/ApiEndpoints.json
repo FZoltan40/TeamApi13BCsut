@@ -44,5 +44,36 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "TeamApi.Controllers.PlayerController",
+    "Method": "Put",
+    "RelativePath": "players",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updatePlayerDto",
+        "Type": "TeamApi.Models.UpdatePlayerDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "TeamApi.Models.Player",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
