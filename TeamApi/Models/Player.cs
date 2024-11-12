@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace TeamApi.Models;
+﻿namespace TeamApi.Models;
 
 public partial class Player
 {
@@ -14,4 +11,6 @@ public partial class Player
     public int? Weight { get; set; }
 
     public DateTime? CreatedTime { get; set; }
+
+    public virtual ICollection<Data> Data { get; set; } = new List<Data>();
 }
